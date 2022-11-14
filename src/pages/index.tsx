@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { Album } from '../components/Album/Album'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const date = new Date();
   return (
     <div className={styles.container}>
       <Head>
@@ -53,6 +55,7 @@ export default function Home() {
           </a>
         </div>
       </main>
+      <Album name="asdf" rating={10} ratingDate={date} releaseDate={date} notes="Great!"/>
 
       <footer className={styles.footer}>
         <a
