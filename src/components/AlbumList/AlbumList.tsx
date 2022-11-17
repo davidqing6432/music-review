@@ -5,6 +5,7 @@ import { addSyntheticTrailingComment, isAsteriskToken } from 'typescript';
 import { Timestamp } from 'firebase/firestore';
 import { useState } from 'react';
 import { addAlbum } from '../../firebase/album';
+import { type } from 'os';
 
 type AlbumListProps = {
   albums: Album[];
@@ -17,6 +18,7 @@ export const AlbumList = (props: AlbumListProps) => {
   const [artist, setArtist] = useState('');
   const now = new Date();
   const [date, setDate] = useState(now);
+  const [music_type, setMusicType] = useState('');
   const handleAddNew = () => {
     if (!adding) {
       setAdding(!adding);
@@ -31,6 +33,7 @@ export const AlbumList = (props: AlbumListProps) => {
       name: name,
       releaseDate: Timestamp.fromDate(releaseDate),
       artist: artist,
+      music_type: music_type,
     };
     await addAlbum(album);
   };
@@ -44,6 +47,7 @@ export const AlbumList = (props: AlbumListProps) => {
             name={album.name}
             artist={album.artist}
             releaseDate={album.releaseDate}
+            music_type={album.music_type}
             // ratingDate={album.ratingDate}
             // notes={''}
             // rating={album.rating}
@@ -79,6 +83,14 @@ export const AlbumList = (props: AlbumListProps) => {
                   ? setDate(event.target.valueAsDate)
                   : null;
               }}
+            />
+            <input
+              className={styles.formElement}
+              type="text"
+              name="music_type"
+              value={music_type}
+              placeholder="LP, EP, or Single"
+              onChange={(event) => setMusicType(event.target.value)}
             />
             <hr />
             <button

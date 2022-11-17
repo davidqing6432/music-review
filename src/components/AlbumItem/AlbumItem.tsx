@@ -5,6 +5,7 @@ type AlbumProps = {
   name: string;
   releaseDate: Timestamp;
   artist: string;
+  music_type: string;
   // TODO: Get rating, ratingDate, and notes to work properly
   //rating: number;
   //ratingDate: Date;
@@ -18,6 +19,7 @@ export const AlbumItem = (props: AlbumProps) => {
       <h1>{props.name}</h1>
       <h1>{props.artist}</h1>
       <h1>{date.toDateString()}</h1>
+      <h1>{props.music_type}</h1>
       {/* 
       <text>{'Rating: ' + rating}</text>
       <text>{props.ratingDate.toUTCString()}</text>

@@ -5,4 +5,5 @@ export type Album = {
     name: string;
     releaseDate: Timestamp;
     artist: string;
+    music_type: string;
 }

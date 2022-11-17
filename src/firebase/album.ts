@@ -27,6 +27,7 @@ const parseAlbum = async (doc:DocumentData): Promise<Album> => {
         name: data.name,
         releaseDate: data.releaseDate,
         artist: data.artist,
+        music_type: data.music_type,
         // rating: data.number,
         // ratingDate: data.ratingDate,
         // notes: data.notes,
