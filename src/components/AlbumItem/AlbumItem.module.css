@@ -1,6 +1,7 @@
-.album-container {
+.album_container {
     display: flex;
     justify-content: space-between;
-    background-color: red;
-    padding: 3%
+    padding: 3%;
+    margin: 0;
+    border: 1px solid white;
 }

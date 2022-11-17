@@ -1,0 +1,33 @@
+.addItem {
+    display: flex;
+    justify-content: center;
+    border: 1px solid white;
+}
+.addItem:hover {
+    background-color: #101010;
+    cursor: pointer;
+}
+.AlbumList {
+    border: 1px solid red;
+}
+.addForm hr {
+    width: 100%;
+    height: 0;
+    border: 0;
+    margin: 0;
+}
+.addItemWrapper {
+    border: 1px solid white;
+}
+.addForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.formElement {
+    margin: 3%;
+}
+.addForm button {
+    flex-grow: 1;
+}

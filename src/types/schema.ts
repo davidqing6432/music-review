@@ -1,6 +1,8 @@
+import { Timestamp } from "firebase/firestore";
 
 export type Album = {
-    id: string;
+    id?: string;
     name: string;
-    releaseDate: string | Date;
+    releaseDate: Timestamp;
+    artist: string;
 }

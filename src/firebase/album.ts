@@ -1,4 +1,5 @@
-import { collection, DocumentData, getDocs } from "firebase/firestore";
+import { addDoc, collection, DocumentData, getDocs } from "firebase/firestore";
+import { isStringObject } from "util/types";
 import { Album } from "../types/schema";
 import { db } from "./firebaseApp";
 
@@ -9,10 +10,13 @@ export const getAllAlbums = async () => {
     const docData = await getDocs(collReference);
     docData.forEach((album) => {
         promises.push(parseAlbum(album))
-    })
+    });
     const albums = await Promise.all(promises);
-    console.log("All Albums:", albums)
     return albums;
+}
+
+export const addAlbum = async (album: Album) => {
+    await addDoc(collReference, album)
 }
 
 const parseAlbum = async (doc:DocumentData): Promise<Album> => {
@@ -22,6 +26,7 @@ const parseAlbum = async (doc:DocumentData): Promise<Album> => {
         id: album_id,
         name: data.name,
         releaseDate: data.releaseDate,
+        artist: data.artist,
         // rating: data.number,
         // ratingDate: data.ratingDate,
         // notes: data.notes,
