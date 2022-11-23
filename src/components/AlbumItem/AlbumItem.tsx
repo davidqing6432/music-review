@@ -16,10 +16,10 @@ export const AlbumItem = (props: AlbumProps) => {
   const date = props.releaseDate.toDate();
   return (
     <div className={styles.album_container}>
-      <h1>{props.name}</h1>
-      <h1>{props.artist}</h1>
-      <h1>{date.toDateString()}</h1>
-      <h1>{props.music_type}</h1>
+      <p>{props.name}</p>
+      <p>{props.artist}</p>
+      <p>{date.toDateString()}</p>
+      <p>{props.music_type}</p>
       {/* 
       <text>{'Rating: ' + rating}</text>
       <text>{props.ratingDate.toUTCString()}</text>

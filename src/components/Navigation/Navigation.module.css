@@ -1,0 +1,21 @@
+.navigation {
+    margin: 2% 3%;
+    width: 94%;
+    height: 10%;
+    top: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navRight {
+    width: 50%; 
+    display: inline-flex;
+    justify-content: flex-end;
+    gap: 5%;
+}
+
+.navLeft {
+    display: inline-flex;
+}

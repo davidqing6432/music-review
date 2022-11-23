@@ -8,7 +8,9 @@
     cursor: pointer;
 }
 .AlbumList {
-    border: 1px solid red;
+    margin: 2rem;
+    margin-top: 10%;
+    border: 1px solid white;
 }
 .addForm hr {
     width: 100%;
@@ -28,6 +30,8 @@
 .formElement {
     margin: 3%;
 }
+
 .addForm button {
     flex-grow: 1;
+    height: 50px;
 }
