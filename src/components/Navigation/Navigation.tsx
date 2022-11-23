@@ -1,21 +1,25 @@
+import Link from 'next/link';
 import styles from './Navigation.module.css';
 
 export const Navigation = () => {
   return (
-    <div className={styles.navigation}>
-      <div className={styles.navLeft}>
-        <a href="../../pages/index.tsx">
-          <h1>Music Review</h1>
-        </a>
+    <>
+      <div className={styles.navigation}>
+        <div className={styles.navLeft}>
+          <Link href="/">
+            <h1>Music Review</h1>
+          </Link>
+        </div>
+        <div className={styles.navRight}>
+          <Link href="/login">
+            <p>Login</p>
+          </Link>
+          <a href="/signup">
+            <p>Signup</p>
+          </a>
+        </div>
       </div>
-      <div className={styles.navRight}>
-        <a href="">
-          <p>Login</p>
-        </a>
-        <a href="">
-          <p>Signup</p>
-        </a>
-      </div>
-    </div>
+      <div className={styles.spacer} />
+    </>
   );
 };

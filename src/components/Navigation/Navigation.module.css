@@ -19,3 +19,8 @@
 .navLeft {
     display: inline-flex;
 }
+
+.spacer {
+    width: 100vw;
+    height: 15vh;
+}

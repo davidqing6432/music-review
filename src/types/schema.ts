@@ -7,3 +7,10 @@ export type Album = {
     artist: string;
     music_type: string;
 }
+
+export type User = {
+    id?: string;
+    email: string;
+    username: string;
+    reviews: Map<string, Map<string, string | number | Timestamp>>;
+}
