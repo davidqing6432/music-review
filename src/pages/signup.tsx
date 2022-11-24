@@ -1,9 +1,10 @@
 import { Timestamp } from 'firebase/firestore';
+import Link from 'next/link';
 import { useState } from 'react';
 import { Navigation } from '../components/Navigation/Navigation';
 import { createEmailPass } from '../firebase/auth';
 import { addUser } from '../firebase/user';
-import styles from '../styles/Signup.module.css';
+import styles from '../styles/SignUp.module.css';
 import { User } from '../types/schema';
 
 const SignUp = () => {
@@ -12,10 +13,6 @@ const SignUp = () => {
   const [pass, setPass] = useState('');
 
   const handleSignUp = async () => {
-    if (email == '' || pass == '' || username == '') {
-      console.log('invalid input');
-      return;
-    }
     console.log('got to beginning of handle sign up');
     const userId = await createEmailPass(email, pass);
     const user: User = {
@@ -29,7 +26,7 @@ const SignUp = () => {
   return (
     <>
       <Navigation />
-      <div className={styles.SignUp}>
+      <div className={styles.signUp}>
         <h2>Lets make your account.</h2>
         <input
           value={email}
@@ -47,6 +44,9 @@ const SignUp = () => {
           onChange={(event) => setUsername(event.target.value)}
         />
         <button onClick={() => handleSignUp()}>Sign Up</button>
+        <Link href="/login">
+          <p>Already have an account? Log in here.</p>
+        </Link>
       </div>
     </>
   );

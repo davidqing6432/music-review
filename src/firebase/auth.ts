@@ -5,8 +5,8 @@ import { getAuth,
     signOut } from "firebase/auth";
 import { app } from "./firebaseApp";
 
-const auth = getAuth(app);
 export const createEmailPass = async ( email: string, password: string ): Promise<string> => {
+    const auth = getAuth(app);
     let uid = "";
     console.log("used create email pass", auth.config.apiKey)
     await createUserWithEmailAndPassword(auth, email, password)
@@ -24,10 +24,12 @@ export const createEmailPass = async ( email: string, password: string ): Promis
 }
 
 export const signInEmailPass = async ( email: string, password: string ) => {
+    const auth = getAuth(app);
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
+        return user;
     })
     .catch((error) => {
         console.error(error);
@@ -36,6 +38,7 @@ export const signInEmailPass = async ( email: string, password: string ) => {
 }
 
 export const useSignOut = () => {
+    const auth = getAuth(app);
     signOut(auth).then(() => {
         // Sign-out successful.
     }).catch((error) => {
@@ -45,6 +48,7 @@ export const useSignOut = () => {
 }
 
 export const authObserver = () => {
+    const auth = getAuth(app);
     onAuthStateChanged(auth, (user) => {
         if (user) {
             // User is signed in

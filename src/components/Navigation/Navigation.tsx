@@ -14,9 +14,9 @@ export const Navigation = () => {
           <Link href="/login">
             <p>Login</p>
           </Link>
-          <a href="/signup">
+          <Link href="/signup">
             <p>Signup</p>
-          </a>
+          </Link>
         </div>
       </div>
       <div className={styles.spacer} />
