@@ -5,3 +5,13 @@
     align-items: center;
     height: 70vh;
 }
+
+.input {
+    width: 30vw;
+    height: 5vh;
+    margin: 1%;
+    padding: 1%;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 5px;
+}

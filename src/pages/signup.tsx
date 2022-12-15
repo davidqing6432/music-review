@@ -29,16 +29,20 @@ const SignUp = () => {
       <div className={styles.signUp}>
         <h2>Lets make your account.</h2>
         <input
+          className={styles.input}
           value={email}
           placeholder="email"
           onChange={(event) => setEmail(event.target.value)}
         />
         <input
+          type="password"
+          className={styles.input}
           value={pass}
           placeholder="password"
           onChange={(event) => setPass(event.target.value)}
         />
         <input
+          className={styles.input}
           value={username}
           placeholder="username"
           onChange={(event) => setUsername(event.target.value)}
