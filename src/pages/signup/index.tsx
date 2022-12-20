@@ -1,11 +1,10 @@
-import { Timestamp } from 'firebase/firestore';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Navigation } from '../components/Navigation/Navigation';
-import { createEmailPass } from '../firebase/auth';
-import { addUser } from '../firebase/user';
-import styles from '../styles/SignUp.module.css';
-import { User } from '../types/schema';
+import { Navigation } from '../../components/Navigation/Navigation';
+import { createEmailPass } from '../../firebase/auth';
+import { addUser } from '../../firebase/user';
+import styles from './SignUp.module.css';
+import { User } from '../../types/schema';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -18,7 +17,7 @@ const SignUp = () => {
     const user: User = {
       email: email,
       username: username,
-      reviews: new Map<string, Map<string, string | number | Timestamp>>(),
+      reviews: [],
     };
     await addUser(userId, user);
   };
@@ -27,24 +26,24 @@ const SignUp = () => {
     <>
       <Navigation />
       <div className={styles.signUp}>
-        <h2>Lets make your account.</h2>
+        <h2>Let&apos;s make your account.</h2>
         <input
           className={styles.input}
           value={email}
-          placeholder="email"
+          placeholder="Email"
           onChange={(event) => setEmail(event.target.value)}
         />
         <input
           type="password"
           className={styles.input}
           value={pass}
-          placeholder="password"
+          placeholder="Password"
           onChange={(event) => setPass(event.target.value)}
         />
         <input
           className={styles.input}
           value={username}
-          placeholder="username"
+          placeholder="Username"
           onChange={(event) => setUsername(event.target.value)}
         />
         <button onClick={() => handleSignUp()}>Sign Up</button>

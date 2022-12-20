@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Music Review</title>
+        <title>SoundOff</title>
         <meta name="description" content="Save a list of your music ratings!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

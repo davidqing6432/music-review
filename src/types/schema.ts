@@ -12,5 +12,12 @@ export type User = {
     id?: string;
     email: string;
     username: string;
-    reviews: Map<string, Map<string, string | number | Timestamp>>;
+    reviews: Review[];
+}
+
+export type Review = {
+    album_id: string;
+    notes: string;
+    rating: number;
+    rating_date: Timestamp;
 }

@@ -38,6 +38,12 @@ export const AlbumList = (props: AlbumListProps) => {
   return (
     <>
       <div className={styles.AlbumList}>
+        <div className={styles.albumHeading}>
+          <p>Album</p>
+          <p>Artist</p>
+          <p>Release Date</p>
+          <p>Type</p>
+        </div>
         {props.albums.map((album) => {
           return (
             <AlbumItem

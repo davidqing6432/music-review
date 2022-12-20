@@ -1,5 +1,4 @@
 import { addDoc, collection, DocumentData, getDocs } from "firebase/firestore";
-import { isStringObject } from "util/types";
 import { Album } from "../types/schema";
 import { db } from "./firebaseApp";
 
